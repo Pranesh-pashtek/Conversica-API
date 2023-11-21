@@ -1,22 +1,22 @@
-#FROM node:16-alpine as build
+# FROM node:16-alpine as build
 
-#WORKDIR /app
+# WORKDIR /app
 
-#COPY . .
+# COPY . .
 
-#RUN npm install
+# RUN npm install
 
-#RUN npm run build:api
+# RUN npm run build:api
 
-#FROM node:16-alpine
+# FROM node:16-alpine
 
-#WORKDIR /app
+# WORKDIR /app
 
-#COPY --from=build /app/node_modules/ node_modules/
+# COPY --from=build /app/node_modules/ node_modules/
 # The working dir in the build stage of this image is
 # also /app. And we need to copy the app folder from
 # within that. That's why it's /app/app/...
-#COPY --from=build /app/app/api/dist/ dist/
-#COPY --from=build /app/app/api/package.json .
+# COPY --from=build /app/app/api/dist/ dist/
+# COPY --from=build /app/app/api/package.json .
 
-#CMD ["npm", "run", "start:server", "start:ui"]
+# CMD ["npm", "run", "start:server", "start:ui"]
