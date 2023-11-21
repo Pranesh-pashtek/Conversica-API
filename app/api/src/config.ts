@@ -1,6 +1,6 @@
 import { Config } from "app";
 
-const defaultPort = 8080;
+const defaultPort = 443;
 
 function getEnvVar(
     envVar: string,
@@ -36,7 +36,7 @@ export function getAppConfig(): Config {
             getEnvVar("REDIRECT_UI_TO_LOCALHOST", false, "false") === "true"
                 ? true
                 : false,
-        selfDomain: getEnvVar("SELF_DOMAIN", false, "http://localhost:8080"),
+        selfDomain: getEnvVar("SELF_DOMAIN", false, "https://localhost:443"),
         sfmcClientId: getEnvVar("SFMC_CLIENT_ID"),
         sfmcClientSecret: getEnvVar("SFMC_CLIENT_SECRET"),
         sfmcDefaultTenantSubdomain: getEnvVar(
