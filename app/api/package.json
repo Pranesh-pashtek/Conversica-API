@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "run-s compile copy",
     "clean:views": "rimraf dist/views",
-    "compile": "tsc",
     "copy:views": "copyfiles src/views/* dist -u 1",
     "copy": "run-s clean:views copy:views",
     "start:server": "node-dev -r dotenv/config --es-module-specifier-resolution=node dist/index.js",
