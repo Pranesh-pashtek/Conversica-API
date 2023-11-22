@@ -1,7 +1,7 @@
-// import https from "https";
+import https from "https";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
-// import { readFileSync } from "fs";
+import { readFileSync } from "fs";
 import xml2js from "xml2js";
 import express, { NextFunction, Request, Response } from "express";
 
@@ -885,5 +885,10 @@ const port = getAppPort();
 //     };
 //     https.createServer(options, app).listen(443);
 // } else {
-    app.listen(port, () => console.log(`Listening on port ${port}`));
+    const options = { 
+        key: readFileSync("server.key"), 
+        cert: readFileSync("server.cert"), 
+        }; 
+    // app.listen(port, () => console.log(`Listening on port ${port}`));
+    https.createServer(options, app).listen(port, () => console.log(`Listening on port ${port}`));
 // }
