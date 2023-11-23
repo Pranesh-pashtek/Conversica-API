@@ -1,6 +1,9 @@
 {
   "name": "sfmc",
   "private": true,
+  "engines": {
+    "node": "14.10.1"
+  },
   "workspaces": {
     "packages": [
       "app/*"
